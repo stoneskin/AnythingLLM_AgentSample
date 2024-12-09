@@ -1,0 +1,38 @@
+{
+    "hubId": "efQFNbWmjoFuOkWDtU05",
+    "active": false,
+    "name": "Datetime",
+    "version": "1.0.0",
+    "description": "A plugin to get current date and time in formatted strings",
+    "author": "MintplexLabs",
+    "author_url": "https://hub.anythingllm.com/u/MintplexLabs",
+    "license": "MIT",
+    "examples": [
+      {
+        "prompt": "Use datetime to tell me what time it is",
+        "call": "{\"format\": \"time\", \"timezone\": \"America/New_York\"}"
+      },
+      {
+        "prompt": "What's today's date?",
+        "call": "{\"format\": \"date\", \"timezone\": \"UTC\"}"
+      },
+      {
+        "prompt": "Use datetime to show me the full timestamp",
+        "call": "{\"format\": \"full\", \"timezone\": \"Europe/London\"}"
+      },
+      {
+        "prompt": "What day of the week is it?",
+        "call": "{\"format\": \"day\", \"timezone\": \"Asia/Tokyo\"}"
+      },
+      {
+        "prompt": "Get the current month",
+        "call": "{\"format\": \"month\", \"timezone\": \"Australia/Sydney\"}"
+      }
+    ],
+    "setup_args": {},
+    "entrypoint": {
+      "file": "handler.js",
+      "params": {}
+    }
+  }
+  

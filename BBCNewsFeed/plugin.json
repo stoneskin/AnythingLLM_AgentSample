@@ -1,0 +1,60 @@
+{
+    "hubId": "lDOqALuN1oejFsNF2evV",
+    "active": false,
+    "name": "BBC News Feed",
+    "version": "1.0.0",
+    "description": "Fetch the latest news from the BBC News Feed",
+    "author": "MintplexLabs",
+    "author_url": "https://hub.anythingllm.com/u/MintplexLabs",
+    "license": "MIT",
+    "examples": [
+      {
+        "prompt": "What is the latest news in the UK?",
+        "call": "{action: 'getBBCNewsFeed', type: 'top_stories'}"
+      },
+      {
+        "prompt": "What is the latest news about politics?",
+        "call": "{action: 'getBBCNewsFeed', type: 'politics'}"
+      },
+      {
+        "prompt": "Can you give me the content of the article the recent election in the UK?",
+        "call": "{action: 'getBBCNewsContent', url: 'https://www.bbc.com/news/uk-politics-66543433'}"
+      },
+      {
+        "prompt": "Lets get the content of that article on the politics section.",
+        "call": "{action: 'getBBCNewsContent', url: 'https://www.bbc.com/news/uk-politics-66543433'}"
+      }
+    ],
+    "setup_args": {},
+    "entrypoint": {
+      "file": "handler.js",
+      "params": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "getBBCNewsFeed",
+            "getBBCNewsContent"
+          ],
+          "default": "getBBCNewsFeed"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "top_stories",
+            "politics",
+            "uk_and_world",
+            "business",
+            "science_and_environment",
+            "technology",
+            "entertainment_and_arts"
+          ],
+          "default": "top_stories"
+        },
+        "url": {
+          "type": "string",
+          "description": "The full URL of the BBC News article to retrieve the content of."
+        }
+      }
+    }
+  }
+  

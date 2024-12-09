@@ -1,0 +1,40 @@
+{
+    "hubId": "84EcQwHpmn4UQEODMpOf",
+    "active": false,
+    "name": "Arxiv Search Tool",
+    "version": "1.0.0",
+    "description": "Search arXiv.org for papers on a given topic and return formatted results.",
+    "author": "MintplexLabs",
+    "author_url": "https://hub.anythingllm.com/u/MintplexLabs",
+    "license": "MIT",
+    "examples": [
+      {
+        "prompt": "Tell me about the latest papers on quantum mechanics",
+        "call": "{\"topic\": \"quantum mechanics\"}"
+      },
+      {
+        "prompt": "What are 10 new research papers on brain computer interfaces?",
+        "call": "{\"topic\": \"brain computer interfaces\", \"limit\": 10}"
+      },
+      {
+        "prompt": "What can we learn about the latest research on AI?",
+        "call": "{\"topic\": \"AI\"}"
+      }
+    ],
+    "setup_args": {},
+    "entrypoint": {
+      "file": "handler.js",
+      "params": {
+        "topic": {
+          "type": "string",
+          "description": "The topic to search for"
+        },
+        "limit": {
+          "type": "number",
+          "description": "The number of results to return",
+          "default": 5
+        }
+      }
+    }
+  }
+  

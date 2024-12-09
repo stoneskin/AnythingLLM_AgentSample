@@ -1,0 +1,45 @@
+{
+    "hubId": "My-Custom-StockQuote-hudId",
+    "active": false,
+    "name": "My Custom StockQuote agent",
+    "version": "1.0.0",
+    "description": "Fetch the latest symbol stock price",
+    "author": "stoneskin",
+    "author_url": "https://hub.anythingllm.com/u/stoneskin",
+    "license": "MIT",
+    "examples": [
+      {
+        "prompt": "What is the latest stock price of AAPL?",
+        "call": "{symbol: 'AAPL', type: 'quote'}"
+      },
+      {
+        "prompt": "What is the price of AAPL stock?",
+        "call": "{symbol: 'AAPL', type: 'quote'}"
+      }
+     
+    ],
+    "setup_args": {},
+    "entrypoint": {
+      "file": "handler.js",
+      "params": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "quote",
+            "info"
+          ],
+          "default": "quote"
+        },
+
+        "url": {
+          "type": "string",
+          "description": "The full URL of the stock quote Api."
+        },
+        "api_key": {
+          "type": "string",
+          "description": "The apiKey of the Api."
+        }
+      }
+    }
+  }
+  
